@@ -122,33 +122,6 @@ This process repeats, gradually improving performance.
 
 ---
 
-## ▶️ How to Run
-
-1. Clone the repository
-
-```
-git clone https://github.com/jiya-talreja/neural_car.git
-```
-
-2. Install dependencies
-
-```
-npm install
-```
-
-3. Start the app
-
-```
-npm start
-```
-
-4. Open in browser
-
-```
-http://localhost:3000
-```
-
----
 
 ## 📊 Features
 
