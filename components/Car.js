@@ -16,11 +16,12 @@ class Car{
         this.damage=false
         this.friction=0.05
         this.angle=0
-        this.braintype=controltype=="nn"
-        if(controltype!="dummy"){
-            this.sensors=new Sensors(this)
-            this.brain=new Nn([this.sensors.rayno,6,4])//neuroncount
-        }
+        this.useBrain = controltype === "nn";
+
+        if (controltype === "nn") {
+        this.sensors = new Sensors(this);
+        this.brain = new Nn([this.sensors.rayno, 6, 4]);
+    }
     }
     update(roadborders,traffic){
         if(!this.damage){
@@ -28,19 +29,17 @@ class Car{
             this.poly=this.#polygon()
             this.damage=this.#damaged(roadborders,traffic)
         }
-        if(this.sensors){
-            this.sensors.update(roadborders,traffic)
-            const offsets=this.sensors.reading.map(
-                e=>e==null?0:1-e.offset
-            )
-            const output=Nn.feedforward(offsets,this.brain)
-            if(this.braintype){
-                this.control.forward=output[0]
-                this.control.left=output[1]
-                this.control.right=output[2]
-                this.control.reverse=output[3]
+        if (this.useBrain && this.sensors) {
+            this.sensors.update(roadborders, traffic);
+            const offsets = this.sensors.reading.map(
+                e => e == null ? 0 : 1 - e.offset
+            );
+            const output = Nn.feedforward(offsets, this.brain);
+            this.control.forward = output[0];
+            this.control.left = output[1];
+            this.control.right = output[2];
+            this.control.reverse = output[3];
             }
-        }
     }
     #move(){
         if(this.control.forward){
