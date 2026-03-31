@@ -29,3 +29,65 @@ button:hover{
 #carCanvas{
     background:lightgray;
 }
+/* Full screen */
+.mode-container {
+  height: 100vh;
+  width: 100vw;
+  background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e2e8f0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Glass card */
+.mode-box {
+  text-align: center;
+  padding: 50px 60px;
+  border-radius: 20px;
+  background: rgba(30, 41, 59, 0.6);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Title */
+.mode-title {
+  font-size: 32px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Buttons container */
+.mode-buttons {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+/* Buttons */
+.mode-btn {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  background: #1e293b;
+  color: #e2e8f0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* Hover */
+.mode-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: #3b82f6;
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.5);
+}
+
+/* Click */
+.mode-btn:active {
+  transform: scale(0.95);
+}
