@@ -1,10 +1,4 @@
-Here’s a clean, professional GitHub **description** first, then a full **README** tailored to your exact project (React-based + genetic algorithm + learning focus + future human vs AI comparison).
 
----
-
-## 🔹 GitHub Description (short)
-
-A React-based self-driving car simulation built from scratch to understand neural networks and genetic algorithms, with evolving agents learning to drive and future scope for human vs AI comparison.
 
 ---
 
